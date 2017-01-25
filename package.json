@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/resin-io-modules/webot-configuration#readme",
   "dependencies": {
+    "coffee-script": "^1.12.3",
     "express": "^4.14.0"
   }
 }

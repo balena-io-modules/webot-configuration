@@ -1,5 +1,5 @@
 express = require 'express'
-app = express()
+app = module.exports = express.createServer()
 
 app.get '/', (request, response) ->
 	response.send 'Hello World!'

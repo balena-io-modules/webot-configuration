@@ -1,11 +1,10 @@
 express = require 'express'
 app = express()
+router = express.Router()
 
-app.configure ->
-	app.set 'port', 80
-
-app.get '/', (request, response) ->
+router.get '/', (request, response) ->
 	response.send 'Hello World!'
 
-app.listen app.get('port'), ->
-	console.log 'done'
+app.use '/', router
+
+app.listen 80

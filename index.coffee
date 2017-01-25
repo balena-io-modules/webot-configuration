@@ -7,4 +7,4 @@ router.get '/', (request, response) ->
 
 app.use '/', router
 
-app.listen 80
+app.listen process.env.PORT

@@ -4,4 +4,4 @@ app = express()
 app.get '/', (request, response) ->
 	response.send 'Hello World!'
 
-app.listen 80
+app.listen 80, -> console.log 'done'

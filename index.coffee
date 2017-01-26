@@ -11,9 +11,9 @@ router.get '/', (request, response) ->
 	output = {
 		from: process.env.HUBOT_DUPLICATE_FROM
 		to: process.env.HUBOT_DUPLICATE_TO
-		rooms: process.env.HUBOT_DUPLICATE_ROOMS
+		rooms: JSON.parse process.env.HUBOT_DUPLICATE_ROOMS
 		creds: [
-			{ name: 'sqweelygig', match: /^sqweelygig$/, token: 'a...f' }
+			{ name: 'sqweelygig', match: '^sqweelygig$', token: 'a...f' }
 		]
 	}
 	response.send JSON.stringify output

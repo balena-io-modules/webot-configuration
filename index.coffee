@@ -9,6 +9,8 @@ router = express.Router()
 
 router.get '/', (request, response) ->
 	response.send process.env.HUBOT_DUPLICATE_FROM
+	response.send process.env.HUBOT_DUPLICATE_TO
+	response.send process.env.HUBOT_DUPLICATE_ROOMS
 
 app.use '/', router
 

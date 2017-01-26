@@ -8,7 +8,15 @@ app = express()
 router = express.Router()
 
 router.get '/', (request, response) ->
-	response.send process.env.HUBOT_DUPLICATE_FROM + process.env.HUBOT_DUPLICATE_TO + process.env.HUBOT_DUPLICATE_ROOMS
+	output = {
+		from: process.env.HUBOT_DUPLICATE_FROM
+		to: process.env.HUBOT_DUPLICATE_TO
+		rooms: process.env.HUBOT_DUPLICATE_ROOMS
+		creds: [
+			{ name: 'sqweelygig', match: /^sqweelygig$/, token: 'a...f' }
+		]
+	}
+	response.send JSON.stringify output
 
 app.use '/', router
 
